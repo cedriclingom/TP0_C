@@ -7,6 +7,8 @@
 /*---------------------------------------------------------------*/       
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 
@@ -21,4 +23,8 @@ int TailleChaine(char *);
 
 int RemplacerCaractere(int, char, char *, int);
 
+void CodeDecimal(char *);
 
+void CodeHexadecimal(char *);
+
+void question4();

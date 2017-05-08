@@ -28,6 +28,10 @@ int main()
 
   printf("2. Remplacer le 8ème caractère par le caractère de fin de chaine et faire la question précédente.Ensuite remettre ' ' et refaire le 1.\n");
 
+  printf("3. Affiche le code ASCII des caractères d'une chaine de caractères.\n");
+
+  printf("4. Effectuer des tests par rapport au strcpy et strncpy.\n");
+
   CodeLecture = scanf("%d", &choix);
 
   if(CodeLecture)
@@ -66,6 +70,30 @@ int main()
 	      printf("La taille de la chaine est: %d\n", TailleChaine(ch));
 
 	    }
+	  
+	  break;
+
+	case 3:
+
+	  printf("Le code ASCII de A est: %d\n", 'A');
+
+	  printf("Le code ASCII de a est: %d\n", 'a');
+
+	  printf("Le code ASCII de chaque caractère de la chaine en décimal.\n");
+
+	  CodeDecimal(ch);
+
+	  printf("Le code ASCII de chaque caractère de la chaine en hexadécimal.\n");
+
+	  CodeHexadecimal(ch);
+
+	  break;
+
+	case 4:
+	    
+	  question4();
+
+	  break;
 	  
 	}
       

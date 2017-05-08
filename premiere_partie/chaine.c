@@ -150,3 +150,126 @@ int RemplacerCaractere(int position, char c, char * ch, int taille)
   return remplacer;
 
 }
+
+
+/*---------------------------------------------------------------*/
+/*                                                               */
+/* CodeDécimal             Donne le code ASCII de chaque         */
+/*                         caractère de la chaine.               */
+/*                                                               */
+/* En entrée             : ch - Pointeur sur un tableau de       */
+/*                              caractères.                      */
+/*                                                               */
+/* En sortie             :      Rien en sortie.                  */
+/*                                                               */
+/* Variable(s) locale(s) : i  - Variable de boucle.              */
+/*                                                               */
+/*---------------------------------------------------------------*/ 
+
+
+void CodeDecimal(char * ch)
+{
+
+  int i = 0;
+
+  while(ch[i] != '\0')
+    {
+      
+      printf("%c = %d\n", ch[i], ch[i]);
+
+      ++i;
+
+    }
+
+}
+
+
+/*---------------------------------------------------------------*/
+/*                                                               */
+/* CodeHexadecimal         Donne le code ASCII de chaque         */
+/*                         caractères sous forme héxadécimal.    */
+/*                                                               */
+/* En entrée             : ch - Pointeur sur un tableau de       */
+/*                              caractères.                      */
+/*                                                               */
+/* En sortie             : Rien en sortie.                       */
+/*                                                               */
+/* Variable(s) locale(s) : i  - Variable de boucle.              */
+/*                                                               */
+/*---------------------------------------------------------------*/ 
+
+
+void CodeHexadecimal(char * ch)
+{
+
+  int i = 0;
+
+  while(ch[i] != '\0')
+    {
+
+      printf("%c = %X\n", ch[i], ch[i]);
+
+      ++i;
+
+    }
+
+}
+
+
+void question4()
+{
+
+  char * ch1 = "Bonjour!", * ch2 = NULL;
+
+  printf("Quand le tableau de destination ne contient pas suffisament de place et qu'on ne vérifie pas.\n");
+
+  ch2 = (char *)malloc(4 * sizeof(char));
+
+  /* if(ch2)
+    {
+
+      strcpy(ch2, ch1);
+
+      printf("Voici la chaine: %s\n", ch2);
+
+      }*/
+
+printf("Maintenant nous allons copier en controllant le nombre de carctères.\n");
+
+  if(ch2)
+    {
+
+      strncpy(ch2, ch1, 4);
+
+      printf("La chaine est: %s\n", ch2);
+
+    }
+
+
+  printf("Lorsqu'il a suffisament d'espace.\n");
+
+  ch2 = (char *)realloc(ch2, 10);
+
+  if(ch2)
+    {
+
+      strcpy(ch2, ch1);
+
+      printf("La chaine est: %s\n", ch2);
+
+    }
+
+  free(ch2);
+
+}
+/*---------------------------------------------------------------*/
+/*                                                               */
+/* RemplacerCaractere     */
+/*                                                               */
+/* En entrée             :*/
+/*                                                               */
+/* En sortie             :*/
+/*                                                               */
+/* Variable(s) locale(s) :*/
+/*                                                               */
+/*---------------------------------------------------------------*/ 
