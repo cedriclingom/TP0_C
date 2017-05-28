@@ -127,10 +127,12 @@ int TailleChaine(char * ch)
 /*---------------------------------------------------------------*/ 
 
 
-int RemplacerCaractere(int position, char c, char * ch, int taille)
+int RemplacerCaractere(int position, char c, char ch[], int taille)
 {
 
-  int remplacer = 1;                                   /*suppose que le remplacement sera bien fait*/
+  static int remplacer;                                   /*suppose que le remplacement sera bien fait*/
+
+  remplacer = 1;
 
   if(position <= taille)                               /*si la postion existe dans la chaine*/
     {
@@ -167,7 +169,7 @@ int RemplacerCaractere(int position, char c, char * ch, int taille)
 /*---------------------------------------------------------------*/ 
 
 
-void CodeDecimal(char * ch)
+void CodeDecimal(char ch[])
 {
 
   int i = 0;
@@ -219,47 +221,27 @@ void CodeHexadecimal(char * ch)
 void question4()
 {
 
-  char * ch1 = "Bonjour!", * ch2 = NULL;
+  char ch2[4], ch3[10];
+
+  char ch1[] = "Bonjour!";
 
   printf("Quand le tableau de destination ne contient pas suffisament de place et qu'on ne vérifie pas.\n");
 
-  ch2 = (char *)malloc(4 * sizeof(char));
+  /*strcpy(ch2, ch1);
 
-  /* if(ch2)
-    {
+    printf("Voici la chaine: %s\n", ch2);*/
 
-      strcpy(ch2, ch1);
+  printf("Maintenant nous allons copier en controllant le nombre de carctères.\n");
 
-      printf("Voici la chaine: %s\n", ch2);
+  strncpy(ch2, ch1, 4);
 
-      }*/
-
-printf("Maintenant nous allons copier en controllant le nombre de carctères.\n");
-
-  if(ch2)
-    {
-
-      strncpy(ch2, ch1, 4);
-
-      printf("La chaine est: %s\n", ch2);
-
-    }
-
+  printf("La chaine est: %s\n", ch2);
 
   printf("Lorsqu'il a suffisament d'espace.\n");
-
-  ch2 = (char *)realloc(ch2, 10);
-
-  if(ch2)
-    {
-
-      strcpy(ch2, ch1);
-
-      printf("La chaine est: %s\n", ch2);
-
-    }
-
-  free(ch2);
+  
+  strcpy(ch3, ch1);
+  
+  printf("La chaine est: %s\n", ch3);
 
 }
 /*---------------------------------------------------------------*/
